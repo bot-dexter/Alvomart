@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alvomart.in – Shop Smarter, Live Better</title>
+  <meta name="description" content="Alvomart.in - Discover endless deals on fashion, electronics, and lifestyle essentials. Shop smarter, live better with Alvomart." />
+  <meta property="og:title" content="Alvomart.in – Shop Smarter, Live Better" />
+  <meta property="og:description" content="Discover endless deals on fashion, electronics, and lifestyle essentials. Shop smarter, live better with Alvomart." />
+  <meta property="og:url" content="https://alvomart.in/" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="/favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fdfdfd;
+      color: #222;
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a { text-decoration: none; color: inherit; }
+    a:focus, button:focus { outline: 2px solid #ff6f61; outline-offset: 4px; }
+
+    /* Header */
+    header {
+      background: #fff;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      padding: 16px 8vw;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #ff6f61;
+      letter-spacing: 2px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-weight: 500;
+    }
+    .nav-links a {
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    .nav-links a:hover { background: #ff6f61; color: #fff; }
+
+    /* Hero */
+    main {
+      flex-grow: 1;
+    }
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+      background: linear-gradient(135deg, #ffede9, #fff);
+      border-radius: 20px;
+      padding: 60px 8vw;
+      margin: 40px auto;
+      max-width: 1200px;
+      box-shadow: 0 12px 36px rgba(255,111,97,0.2);
+    }
+    .hero-text { flex: 1 1 380px; }
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #ff6f61;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .hero-tagline {
+      font-size: 1.25rem;
+      color: #444;
+      margin-bottom: 32px;
+      font-weight: 500;
+    }
+    .hero-cta {
+      display: inline-block;
+      background: linear-gradient(90deg, #ff6f61, #ff9f85);
+      color: #fff;
+      padding: 16px 40px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(255,111,97,0.5);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .hero-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px rgba(255,111,97,0.7);
+    }
+    .hero-image {
+      flex: 1 1 420px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      animation: float 6s ease-in-out infinite;
+    }
+    .hero-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0); }
+    }
+
+    /* Categories Grid */
+    .categories {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 8vw;
+    }
+    .categories h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: 700;
+      color: #333;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+    }
+    .category-card {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .category-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+    }
+    .category-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .category-card:hover img { transform: scale(1.08); }
+    .category-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 20px;
+    }
+    .category-title {
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 600;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    }
+
+    /* Footer */
+    footer {
+      background: #fafafa;
+      padding: 24px 8vw;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #777;
+      border-top: 1px solid #eee;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero { flex-direction: column; text-align: center; }
+      .hero-title { font-size: 2.4rem; }
+      .hero-cta { margin: 0 auto; }
+    }
+    @media (max-width: 600px) {
+      .hero-title { font-size: 2rem; }
+      .hero-tagline { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/" class="logo">Alvomart</a>
+      <div class="nav-links">
+        <a href="#shop">Shop</a>
+        <a href="#deals">Deals</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <h1 id="hero-title" class="hero-title">Shop Smarter, Live Better</h1>
+        <p class="hero-tagline">Discover fashion, electronics, and lifestyle essentials at unbeatable prices. Fast delivery, secure shopping, endless choices.</p>
+        <a href="#shop" class="hero-cta">Explore Now</a>
+      </div>
+      <div class="hero-image" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=80" alt="Online shopping on mobile and laptop" loading="lazy" />
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories" id="shop">
+      <h2>Explore Our Categories</h2>
+      <div class="grid">
+        <div class="category-card">
+          <img src="https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=800&q=80" alt="Fashion clothing collection" />
+          <div class="category-overlay"><span class="category-title">Fashion</span></div>
+        </div>
+        <div class="category-card">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Modern electronic gadgets" />
+          <div class="category-overlay"><span class="category-title">Electronics</span></div>
+        </div>
+        <div class="category-card">
+          <img src="https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=800&q=80" alt="Home decor and furniture" />
+          <div class="category-overlay"><span class="category-title">Home & Living</span></div>
+        </div>
+        <div class="category-card">
+          <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80" alt="Kitchen appliances" />
+          <div class="category-overlay"><span class="category-title">Kitchen</span></div>
+        </div>
+        <div class="category-card">
+          <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=800&q=80" alt="Fitness and sports equipment" />
+          <div class="category-overlay"><span class="category-title">Sports & Fitness</span></div>
+        </div>
+        <div class="category-card">
+          <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=80" alt="Books and stationery" />
+          <div class="category-overlay"><span class="category-title">Books</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Alvomart.in — Your Ultimate Online Marketplace.
+  </footer>
+</body>
+</html>
+
